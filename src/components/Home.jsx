@@ -1,13 +1,12 @@
 import React from "react";
 import { posts } from "../data/posts.js";
 import classes from "../styles/Home.module.css";
-
-//import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return posts.map((post) => (
     <div key={post.id} className={classes.post}>
-      <a href={post.id} className={classes.Link}>
+      <Link to={`/posts/${post.id}`} className={classes.Link}>
         {/* `/posts/${post.id}`の``は、JSの書き方。`post.id`の値が`/posts/の後に続くURLを動的に作成しています。例えば、post.id`が`123`なら、リンク先は`/posts/123`になる*/}
 
         <div className={classes.info}>
@@ -26,22 +25,7 @@ export const Home = () => {
           className={classes.content}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
-      </a>
+      </Link>
     </div>
   ));
 };
-
-//export const Home = () => {
-//  const [state, setState] = useState([]);
-// const [loading, setLoading] = useState(false);
-
-//useEffect(()=>{
-//    const fetcher=async()=>{
-//         setLoading(true);
-//         const res =await fetch(
-
-//         )
-//     }
-// })
-
-//};
