@@ -62,3 +62,9 @@ h2 {
   font-size: 1.5rem; /*ルート要素のフォントサイズの1.5倍の大きさを指定している*/
   font-weight: bold;
 }
+
+.postLoading {
+  margin: 20px auto;
+  font-size: 15px;
+  font-weight: bold;
+}
